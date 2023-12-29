@@ -23,8 +23,12 @@ class ProjectProjectCustom(models.Model):
     # nome_fatura = {sale_line_id.order_id.invoice_ids.id}
     # allss_status_pagamento = fields.Selection(related='id_fatura_dois.payment_state', string="Status Pagamento Auditoria", store=True)
     payment_state = None
-    allss_status_pagamento = fields.Selection(related='payment_state.payment_state', compute='set_account_move_id', string="Status Pagamento Auditoria", store=True)
+    
+    # allss_status_pagamento = fields.Selection(related='payment_state.payment_state', compute='set_account_move_id', string="Status Pagamento Auditoria", store=True)
+    allss_status_pagamento = fields.Char(related="payment_state", string="STATUS DE PAGAMENTO DA AUDITORIA")
 
     def set_account_move_id(self):    
-        id_account = self.env['account.move'].search([('id','=', self.id_fatura)])
-        self.payment_state = id_account
+        payment_state_dois = self.env['account.move'].search([('id','=', self.id_fatura)], limit=1).payment_state
+        self.payment_state = payment_state_dois
+
+    set_account_move_id()
