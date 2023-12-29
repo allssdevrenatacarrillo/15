@@ -10,4 +10,5 @@ class ProjectProjectCustom(models.Model):
     # allss_status_pagamento = fields.Selection(related='model_a_id.payment_state', string="Status Pagamento Auditoria", store=True)
     # allss_status_pagamento = fields.Selection(related='sale_line_id.order_id.invoice_ids.payment_state', string="Status Pagamento Auditoria", store=True)
     allss_status_pagamento = fields.Char(related='sale_line_id.order_id.invoice_ids.name', string="Status Pagamento Auditoria", store=True)
+    allss_status_pagamento_dois = fields.Char(related='sale_line_id.order_id.invoice_ids.payment_state.name', string="Status Pagamento Auditoria", store=True)
     # cond_pedido_field = fields.Char(string='Nome', compute="_get_pedido", readonly=True)
