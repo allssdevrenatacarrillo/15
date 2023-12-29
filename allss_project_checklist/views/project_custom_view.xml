@@ -5,13 +5,7 @@
     <field name="model">project.project</field>
     <field name="inherit_id" ref="project.edit_project"/>
     <field name="arch" type="xml">
-            <page string="Resumo" name="audit_summary_page">
-                <group>
-                    <group>
-                        <!-- <field name="allss_status_pagamento"/> -->
-                    </group>
-                </group>
-            </page>
+
     </field>
     </record>
 </odoo>
