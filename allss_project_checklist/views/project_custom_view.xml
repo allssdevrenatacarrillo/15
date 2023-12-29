@@ -6,8 +6,8 @@
     <field name="inherit_id" ref="project.edit_project"/>
     <field name="arch" type="xml">
         <xpath expr="//field[@name='tag_ids']" position="after">
-            <field name="model_a_id"/>   
-            <!-- <field name="cond_pedido_field"/> -->
+            <!-- <field name="model_a_id"/> -->
+            <field name="allss_status_pagamento"/>
             <field name="nome_fatura"/>
         </xpath>
     </field>
