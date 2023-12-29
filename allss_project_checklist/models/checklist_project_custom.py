@@ -30,9 +30,11 @@ class ProjectProjectCustom(models.Model):
 
     # allss_status_pagamento = fields.Char(related='sale_line_id.order_id.invoice_ids.payment_state', string="Status Pagamento Auditoria", store=True)
 
-    def teste(self):
-        _logger.warning(f'############### partner_name: {self.sale_line_id.order_id.invoice_ids.payment_state} ###############')
+    
 
-    teste
+    def teste(self):
+            _logger.warning(f'############### partner_name: {self.sale_line_id.order_id.invoice_ids.payment_state} ###############')
+
+    _inherit.teste
 
     
