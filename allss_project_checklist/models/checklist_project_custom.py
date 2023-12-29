@@ -10,3 +10,8 @@ class ProjectProjectCustom(models.Model):
     # allss_status_pagamento = fields.Selection(related='model_a_id.payment_state', string="Status Pagamento Auditoria", store=True)
     allss_status_pagamento = fields.Selection(related='sale_line_id.order_id.invoice_ids.payment_state', string="Status Pagamento Auditoria", store=True)
     # allss_status_pagamento = fields.Selection(related='model_a_id', string="Status Pagamento Auditoria", store=True)
+
+    @api.model
+    def account_search(self, sale_line_id):
+        model_a_id = self.search(sale_line_id.order_id.invoice_ids.id)
+        return model_a_id
