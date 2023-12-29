@@ -19,3 +19,4 @@ class ProjectProjectCustom(models.Model):
 
     # _logger.warning(f'_____>STATUS PAGAMENTO AUDITORIA: {order_id.id} <________')
 
+    nome_fatura = fields.Char(related="sale_line_id.order_id.invoice_ids.name", string="nome fatura")
