@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'ALLSS - Checklists',
-    'version': '14.0.1.0.0',
+    'version': '15.0.1.0.0',
     'licence': 'AGPL-3',
     'category': 'Project',
     'author': 'Renata Carrillo (ALLSS Soluções em Sistemas),',
@@ -16,7 +16,7 @@
     ],
     'data': [
         #report
-        'reports/report.xml',
+        # 'reports/report.xml',
 
         #views
         'views/project_custom_view.xml',
