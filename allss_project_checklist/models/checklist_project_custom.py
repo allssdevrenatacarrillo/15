@@ -12,7 +12,8 @@ class ProjectProjectCustom(models.Model):
     cond_pedido_field = fields.Char(string='Nome', compute='_get_pedido', readonly=True)
 
     def _get_pedido(self):
-        cond_pedido = {self.sale_line_id.order_id.invoice_ids}
+        # cond_pedido = {self.sale_line_id.order_id.invoice_ids}
+        cond_pedido = 'xpto'
         return cond_pedido
 
 
