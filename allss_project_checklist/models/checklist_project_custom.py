@@ -18,8 +18,8 @@ class ProjectProjectCustom(models.Model):
 
 
     # _logger.warning(f'_____>STATUS PAGAMENTO AUDITORIA: {order_id.id} <________')
-
-    nome_fatura = fields.Many2one('account.move', string='nome fatura')
+    id_fatura = fields.Char(related="sale_line_id.order_id.invoice_ids.id", string="nome fatura")
+    id_fatura_dois = fields.Many2one('account.move', default={id_fatura}, string='nome fatura')
     # nome_fatura = fields.Char(related="sale_line_id.order_id.invoice_ids.id", string="nome fatura")
-    nome_fatura = "sale_line_id.order_id.invoice_ids.id"
-    allss_status_pagamento = fields.Selection(related='nome_fatura.payment_state', string="Status Pagamento Auditoria", store=True)
+    # nome_fatura = {sale_line_id.order_id.invoice_ids.id}
+    allss_status_pagamento = fields.Selection(related='id_fatura_dois.payment_state', string="Status Pagamento Auditoria", store=True)
