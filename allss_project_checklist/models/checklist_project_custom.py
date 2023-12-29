@@ -31,4 +31,4 @@ class ProjectProjectCustom(models.Model):
         payment_state_dois = self.env['account.move'].search([('id','=', self.id_fatura)], limit=1).payment_state
         self.payment_state = payment_state_dois
 
-    set_account_move_id()
+    set_account_move_id
