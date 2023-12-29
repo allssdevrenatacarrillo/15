@@ -7,7 +7,7 @@
     <field name="arch" type="xml">
         <xpath expr="//field[@name='tag_ids']" position="after">
             <field name="model_a_id"/>   
-            <field name="joao"/>      
+            <field name="cond_pedido_field"/>      
         </xpath>
     </field>
     </record>
