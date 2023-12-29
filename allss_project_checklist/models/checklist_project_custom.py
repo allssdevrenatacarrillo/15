@@ -17,16 +17,14 @@ class ProjectProjectCustom(models.Model):
     #     return cond_pedido
 
 
-    # _logger.warning(f'_____>STATUS PAGAMENTO AUDITORIA: {order_id.id} <________')
-    id_fatura = fields.Char(related="sale_line_id.order_id.invoice_ids.id", string="nome fatura")
-    id_fatura_dois = fields.Many2one('account.move', compute='set_account_move_id', string='nome fatura')
+    # id_fatura = fields.Char(related="sale_line_id.order_id.invoice_ids.id", string="nome fatura")
+    # id_fatura_dois = fields.Many2one('account.move', compute='set_account_move_id', string='nome fatura')
     # nome_fatura = fields.Char(related="sale_line_id.order_id.invoice_ids.id", string="nome fatura")
     # nome_fatura = {sale_line_id.order_id.invoice_ids.id}
-    allss_status_pagamento = fields.Selection(related='id_fatura_dois.payment_state', string="Status Pagamento Auditoria", store=True)
+    # allss_status_pagamento = fields.Selection(related='id_fatura_dois.payment_state', string="Status Pagamento Auditoria", store=True)
+    payment_state = fields.Char(related="sale_line_id.order_id.invoice_ids.payment_state", string="nome fatura")
+    allss_status_pagamento = fields.Selection(related='payment_state.payment_state', string="Status Pagamento Auditoria", store=True)
 
-    def set_account_move_id(self):    
-        # _logger.warning(f" SET STAGE CHECK {self.stage_id.name}")
-        id_account = self.env['account.move'].search([('id','=', self.id_fatura)])
-        # _logger.warning(f" SET STAGE CHECK {status}")
-        self.id_fatura_dois = id_account
-        # self.project_id.project_phase = status
+    # def set_account_move_id(self):    
+    #     id_account = self.env['account.move'].search([('id','=', self.id_fatura)])
+    #     self.id_fatura_dois = id_account
