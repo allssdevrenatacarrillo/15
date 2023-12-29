@@ -1,0 +1,12 @@
+@supports (position: sticky){
+    .o_list_view .o_list_table > thead{
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        box-shadow: 0 2px 5px 0px #ccc
+    }
+}
+
+.o_field_one2many .table-responsive{
+    overflow: unset;
+}
