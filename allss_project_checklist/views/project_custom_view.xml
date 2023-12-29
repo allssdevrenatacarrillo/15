@@ -8,7 +8,6 @@
         <xpath expr="//field[@name='tag_ids']" position="after">
             <!-- <field name="model_a_id"/> -->
             <field name="allss_status_pagamento"/>
-            <field name="allss_status_pagamento_dois"/>
         </xpath>
     </field>
     </record>
